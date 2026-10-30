@@ -2,14 +2,14 @@ import express from "express"
 const app=express();
 import z, { success } from "zod"
 import {auth} from "./middleware";
-import { user_schema } from "./zodschema";
+import {createuserschema,signinschema,createroomschema} from "@repo/common"
 app.listen(3000,()=>{
     console.log('app is running')
 })
 app.use(express.json())
 app.post('/api/signup',(req,res)=>{
     
-    const result=user_schema.safeParse(req.body);
+    const result=signinschema.safeParse(req.body);
     if(!result.success){
         res.json({error:"invalid username | password"});
         return;
@@ -19,7 +19,7 @@ app.post('/api/signup',(req,res)=>{
     return res.json("pp")
 })
 app.post('/api/signin',(req,res)=>{
-    const result=user_schema.safeParse(req.body);
+    const result=createuserschema.safeParse(req.body);
     if(!result.success){
         res.json({error:"invalid username | password"});
         return;
@@ -28,5 +28,5 @@ app.post('/api/signin',(req,res)=>{
     
 })
 app.post('/api/createroom',auth,(req,res)=>{
-
+    const result=createroomschema.safeParse(req.body)
 })
