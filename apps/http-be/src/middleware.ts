@@ -7,7 +7,7 @@ export const auth=(req:Request,res:Response,next:NextFunction)=>{
     
     if(!decoded || !(decoded as JwtPayload).userId){
         return res.json({message:'not right type'})
-    }
+    }//@ts-ignore
     req.userId=(decoded as JwtPayload).userId
     next();
 
