@@ -27,6 +27,7 @@
     "jsonwebtoken": "^9.0.3",
     "ws": "^8.22.0",
     "zod": "^4.6.7",
+    "@repo/db":"workspace:*",
     "@repo/backend-common":"workspace:*",
     "@repo/common":"workspace:*"
   },

@@ -1,0 +1,29 @@
+// use prisma-8
+
+model User{
+  id String @id @onCreate(uuid())
+  email String 
+  password String
+  name String
+  photo String
+  rooms Room[]
+  chats Chat[]
+}
+
+
+model Room{
+  id Int @id@default(autoincrement())
+  slug String @unique
+  createdAt DateTime @default(now())
+  adminId String 
+  Admin User @relation(fields: [adminId],references: [id])
+  chats Chat[]
+}
+model Chat{
+  id Int @id @default(autoincrement())
+  message String
+  userId String
+  roomId Int
+  room Room @relation(fields: [roomId],references: [id])
+  user User @relation(fields: [userId],references: [id])
+}

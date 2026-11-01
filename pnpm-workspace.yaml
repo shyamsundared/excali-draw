@@ -2,4 +2,6 @@ packages:
   - "apps/*"
   - "packages/*"
 allowBuilds:
-  node: set this to true or false
+  esbuild: true
+  node: true
+  workerd: false
