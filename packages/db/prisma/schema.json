@@ -219,7 +219,7 @@
                 }
               },
               "photo": {
-                "nullable": false,
+                "nullable": true,
                 "type": {
                   "codecId": "pg/text@1",
                   "kind": "scalar"
@@ -481,7 +481,7 @@
                 "photo": {
                   "codecId": "pg/text@1",
                   "dataType": "pg/text",
-                  "nullable": false
+                  "nullable": true
                 }
               },
               "foreignKeys": [],
@@ -491,7 +491,13 @@
                   "id"
                 ]
               },
-              "uniques": []
+              "uniques": [
+                {
+                  "columns": [
+                    "email"
+                  ]
+                }
+              ]
             }
           }
         },
@@ -499,7 +505,7 @@
         "kind": "postgres-schema"
       }
     },
-    "storageHash": "9a6981fa43d055373c2cb00f1b506e7e241fffea6f8bed3a1f0563508ef3c78a"
+    "storageHash": "f97d5fca47f973a2852011bb196735c5978f208805f51d8c9f9efecab17b6a6e"
   },
   "execution": {
     "executionHash": "6af348abd699e1b0a0e911a7d2da008ff3a1d475a3fb1b36540365f78ad570d0",
