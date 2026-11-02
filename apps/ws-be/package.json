@@ -18,6 +18,15 @@
     "@repo/backend-common":"workspace:*",
     "@repo/db":"workspace:*"
   },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/ws": "^8.18.2",
+    "jsonwebtoken": "^9.0.3",
+    "ws": "^8.22.0",
+    "@repo/backend-common":"workspace:*",
+    "@repo/db":"workspace:*"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

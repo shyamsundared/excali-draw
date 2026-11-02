@@ -6,7 +6,7 @@ import {auth} from "./middleware";
 import{createuserschema,signinschema,createroomschema} from "@repo/common/types"
 import {db} from "@repo/db"
 import { JWT_SECRET } from "@repo/backend-common/config";
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log('app is running')
 })
 app.use(express.json())
