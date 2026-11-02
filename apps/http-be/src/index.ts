@@ -87,3 +87,10 @@ app.post('/api/createroom',auth,async (req,res)=>{
     
     
 })
+app.get('/chats/:roomId',async (req,res)=>{
+    const roomId=Number(req.params.roomId);
+    const messages=await db.orm.public.Chat.where({roomId}).orderBy((chat)=>chat.id.desc()).limit(50).all();
+    res.json({
+        messages
+    })
+})  
